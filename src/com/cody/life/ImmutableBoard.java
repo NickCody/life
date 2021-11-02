@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class ImmutableBoard {
 
-    static Character DEAD_CHAR = '×';
+    static Character DEAD_CHAR = '⚬';
     static Character LIVE_CHAR = '⬤';
 
     ArrayList<Character> board;
