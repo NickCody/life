@@ -29,7 +29,7 @@
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>libs/</classpathPrefix>
                             <mainClass>
-                                com.cody.life.Main
+                                com.cody.life.immutable.Run
                             </mainClass>
                         </manifest>
                     </archive>
