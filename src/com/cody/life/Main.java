@@ -6,12 +6,13 @@ public class Main {
         Board board = new Board(20,20);
         board.random();
         System.out.println("This is the random board");
-        board.debugPrint();
+        board.print();
 
-        board.newGeneration();
-        System.out.println("This is the random board with game of life applied");
-        board.debugPrint();
-
+        for (int i=0; i < 10; i++) {
+            board.newGeneration();
+            System.out.println("This is the random board with game of life applied");
+            board.print();
+        }
 
     }
 }

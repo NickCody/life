@@ -8,9 +8,9 @@ import java.util.Random;
 
 public class Board {
 
-    static Character DEAD_CHAR = '.';
+    static Character DEAD_CHAR = '·';
     static Character SPACE_CHAR = ' ';
-    static Character ALIVE_CHAR = 'x';
+    static Character ALIVE_CHAR = '⬤';
 
     ArrayList<ArrayList<Character>> board;
     int rows;
@@ -73,17 +73,11 @@ public class Board {
     }
 
     boolean isValidPosition(int row, int col){
-        if (row >= 0 && col >= 0 && row < rows && col < cols){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return row >= 0 && col >= 0 && row < rows && col < cols;
     }
 
     Character safeGet(int row, int col){
-        if (isValidPosition(row, col) == true) {
-
+        if (isValidPosition(row, col)) {
             return board.get(row).get(col);
         }
         else{
@@ -115,28 +109,28 @@ public class Board {
 
     int countNeighbors(int row, int col){
         int count = 0;
-        if ((isValidPosition(row - 1, col - 1) == true ) && (safeGet(row -1, col -1) == ALIVE_CHAR)) {
+        if (safeGet(row -1, col -1) == ALIVE_CHAR) {
             ++count;
         }
-        if ((isValidPosition(row, col - 1) == true ) && (safeGet(row, col -1) == ALIVE_CHAR)) {
+        if (safeGet(row, col -1) == ALIVE_CHAR) {
             ++count;
         }
-        if ((isValidPosition(row + 1, col - 1) == true ) && (safeGet(row + 1, col - 1) == ALIVE_CHAR)) {
+        if (safeGet(row + 1, col - 1) == ALIVE_CHAR) {
             ++count;
         }
-        if ((isValidPosition(row + 1, col) == true ) && (safeGet(row + 1, col) == ALIVE_CHAR)) {
+        if (safeGet(row + 1, col) == ALIVE_CHAR) {
             ++count;
         }
-        if ((isValidPosition(row + 1, col + 1) == true ) && (safeGet(row +1, col - +1) == ALIVE_CHAR)) {
+        if (safeGet(row +1, col +1) == ALIVE_CHAR) {
             ++count;
         }
-        if ((isValidPosition(row, col + 1) == true ) && (safeGet(row, col +1) == ALIVE_CHAR)) {
+        if (safeGet(row, col +1) == ALIVE_CHAR) {
             ++count;
         }
-        if ((isValidPosition(row - 1, col + 1) == true ) && (safeGet(row -1, col +1) == ALIVE_CHAR)) {
+        if (safeGet(row -1, col +1) == ALIVE_CHAR) {
             ++count;
         }
-        if ((isValidPosition(row - 1, col) == true ) && (safeGet(row -1, col) == ALIVE_CHAR)) {
+        if (safeGet(row -1, col) == ALIVE_CHAR) {
             ++count;
         }
         return count;
