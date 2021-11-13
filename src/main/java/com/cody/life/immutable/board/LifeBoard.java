@@ -139,8 +139,8 @@ public class LifeBoard {
     public LifeBoard debugPrint() {
         Charset utf8 = StandardCharsets.UTF_8;
         PrintWriter printWriter = new PrintWriter(System.out,true, utf8);
-        Character[] liveNeighbors = {'⬮', '➊', '➋', '➌', '➍', '➎', '➏', '➐', '➑' };
-        Character[] deadNeighbors = {'⬯', '➀', '➁', '➂', '➃', '➄', '➅', '➆', '➇' };
+        Character[] liveNeighbors = {'⓿', '➊', '➋', '➌', '➍', '➎', '➏', '➐', '➑' };
+        Character[] deadNeighbors = {'⓪', '➀', '➁', '➂', '➃', '➄', '➅', '➆', '➇' };
 
         for (int i = 0; i < numRows; i++) {
             for (int j = 0; j < numCols; j++) {
