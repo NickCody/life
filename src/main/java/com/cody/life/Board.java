@@ -44,12 +44,15 @@ public class Board {
     }
 
     public void print() {
+        Charset utf8 = StandardCharsets.UTF_8;
+        PrintWriter printWriter = new PrintWriter(System.out,true, utf8);
+
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                System.out.print(board.get(i).get(j));
-                System.out.print(SPACE_CHAR);
+                printWriter.print(board.get(i).get(j));
+                printWriter.print(SPACE_CHAR);
             }
-            System.out.println();
+            printWriter.println();
         }
     }
 

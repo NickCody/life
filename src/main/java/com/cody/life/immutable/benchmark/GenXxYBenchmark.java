@@ -7,7 +7,7 @@ public class GenXxYBenchmark {
 
         int rows = 100;
         int cols = 100;
-        long maxIterations = 30000;
+        long maxIterations = 3000;
 
         if (args.length == 1) {
             rows = cols = Integer.parseInt(args[0]);
