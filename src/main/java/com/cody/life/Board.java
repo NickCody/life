@@ -136,7 +136,7 @@ public class Board {
         return count;
     }
 
-    public void newGeneration(){
+    public Board newGeneration(){
         //Creates a new random board
         Board newBoard = new Board(rows, cols);
         for (int i = 0; i < rows; i++) {
@@ -159,7 +159,30 @@ public class Board {
                 }
             }
         }
-        board = newBoard.board;
+        return newBoard;
+    }
+
+    public boolean isSameBoard (Board toCompare) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (board.get(i).get(j) != toCompare.board.get(i).get(j)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public int numAlive() {
+        int aliveSpaces = 0;
+        for (int i = 0; i < rows ; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (board.get(i).get(j) == ALIVE_CHAR) {
+                    aliveSpaces++;
+                }
+            }
+        }
+        return aliveSpaces;
     }
 
 }
