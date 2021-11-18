@@ -7,7 +7,7 @@ public class Run {
     public static void main(String[] args) throws InterruptedException {
 
         int rows = 20;
-        int cols = 20;
+        int cols = 40;
 
         if (args.length == 1) {
             rows = cols = Integer.parseInt(args[0]);
