@@ -6,13 +6,16 @@ public class Graph {
 
     static class AdjacencyListGraph {
         int numVertices;
-        ArrayList<Integer>[] adj;
+        ArrayList[] adj;
 
+
+        // constructor - where we create an empty array of ArrayList<Integer>
+        //
         AdjacencyListGraph(int numVertices) {
             this.numVertices = numVertices;
             adj = new ArrayList[numVertices];
             for (int i = 0; i < numVertices; i++) {
-                adj[i] = new ArrayList<>();
+                adj[i] = new ArrayList<Integer>();
             }
         }
 
@@ -46,7 +49,7 @@ public class Graph {
         //  Node 0: -- 1 -- 3
         //  Node 1: -- 0 -- 2 -- 3
         //  Node 2: -- 1
-        //  Node 3: -- 0 -- 1 -- 4
+        //  Node 3: -- 1 -- 0 -- 4
         //  Node 4: -- 3
         // }
         void printStructure() {
