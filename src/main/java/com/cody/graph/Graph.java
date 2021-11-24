@@ -19,9 +19,12 @@ public class Graph {
             }
         }
 
+
+
         // undirected, add two edges
         void addEdge(int u, int v) {
-            // TODO
+            adj[u].add(v);
+            adj[v].add(u);
         }
 
         // Prints dot language representation, one row per edge relationship:
@@ -37,8 +40,15 @@ public class Graph {
         //
         // NOTE: This is not the physical representation of the graph, but one xdot needs
         //
-        void print() {
-            // TODO
+        void printDot() {
+            System.out.println("strict graph {");
+            for (int i = 0; i < numVertices; i++) {
+                for (int j = 0; j < adj[i].size(); j++) {
+                    System.out.print(i + " -- " + adj[i].get(j));
+                    System.out.println();
+            }
+            }
+            System.out.println("}");
         }
 
         // Prints physical structure of the grid
@@ -53,7 +63,15 @@ public class Graph {
         //  Node 4: -- 3
         // }
         void printStructure() {
-            // TODO
+            System.out.println("Adjacency list:");
+            for (int i = 0; i < numVertices; i++) {
+                System.out.print("Node " + i + ": ");
+                for (Object x : adj[i]) {
+                    System.out.print("-- " + x + " ");
+                }
+                System.out.println();
+            }
+            System.out.println("}");
         }
 
     }
@@ -66,6 +84,7 @@ public class Graph {
         graph.addEdge(3,0);
         graph.addEdge(3,4);
 
-        graph.print();
+        //graph.printStructure();
+        graph.printDot();
     }
 }
